@@ -1,0 +1,70 @@
+import random
+
+print(" Food ChatBot")
+print("Type 'bye' to exit.\n")
+
+while True:
+    user_input = input("You: ").lower()
+
+    if user_input in ["hi", "hello", "hey"]:
+        print("Bot: Hello! What would you like to eat today?")
+
+    elif "menu" in user_input:
+        print("\n MENU")
+        print("1. Pizza - ₹250")
+        print("2. Burger - ₹120")
+        print("3. Sandwich - ₹80")
+        print("4. Pasta - ₹150")
+        print("5. Cold Drink - ₹50\n")
+
+    elif "pizza" in user_input:
+        print("Bot:  Pizza is available for ₹250.")
+        
+    elif "burger" in user_input:
+        print("Bot:  Burger is available for ₹120.")
+
+    elif "sandwich" in user_input:
+        print("Bot:  Sandwich is available for ₹80.")
+
+    elif "pasta" in user_input:
+        print("Bot:  Pasta is available for ₹150.")
+
+    elif "cold drink" in user_input:
+        print("Bot:  Cold Drink is available for ₹50.")
+
+    elif "order" in user_input:
+        print("Bot: What would you like to order?")
+        item = input("Enter food name: ").lower()
+
+        if item == "pizza":
+            print("Bot: Your Pizza order has been placed! ")
+        elif item == "burger":
+            print("Bot: Your Burger order has been placed! ")
+        elif item == "sandwich":
+            print("Bot: Your Sandwich order has been placed! ")
+        elif item == "pasta":
+            print("Bot: Your Pasta order has been placed!")
+        else:
+            print("Bot: Sorry, item not available.")
+
+    elif "suggest" in user_input:
+        foods = ["Pizza", "Burger", "Pasta", "Sandwich"]
+        print("Bot: I recommend", random.choice(foods))
+        
+    elif "help" in user_input:
+        print("\nBot Commands:")
+        print("menu")
+        print("order")
+        print("pizza")
+        print("burger")
+        print("sandwich")
+        print("pasta")
+        print("suggest")
+        print("bye\n")
+
+    elif user_input == "bye":
+        print("Bot: Thank you for visiting!")
+        break
+
+    else:
+        print("Bot: Sorry, I don't understand. Type 'menu' to see food items.")
